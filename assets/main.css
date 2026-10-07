@@ -776,3 +776,14 @@ main > section.dark::after,
 
 /* Section separators for thesis and academic path */
 #thesis .list article:first-child,#education .list article:first-child{border-top:1px solid var(--line)}
+
+
+/* Divider specifically between sections 06 and 07 */
+#thesis + .added-section-divider {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
