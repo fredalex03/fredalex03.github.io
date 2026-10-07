@@ -770,3 +770,9 @@ main > section.dark::after,
 .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;animation:none!important;transform:none!important;filter:none!important;image-rendering:auto}
 @media(max-width:900px){.heroText{padding-right:0;padding-bottom:260px}.hero-portrait{right:50%;bottom:-26px;width:min(58vw,285px);transform:translateX(50%)}}
 @media(max-width:560px){.heroText{padding-bottom:215px}.hero-portrait{width:min(60vw,230px);bottom:-18px}}
+
+/* Clickable awards, thesis, and reference-style arrows */
+.award-link,.award-link:link,.award-link:visited,#thesis .thesis-entry h3 a,#thesis .thesis-entry h3 a:link,#thesis .thesis-entry h3 a:visited{color:inherit;text-decoration:none!important;border-bottom:0!important}.award-link{display:contents}.awards article:has(.award-link){cursor:pointer}.award-link h3::after,#thesis .thesis-entry h3 a::after{content:"↗";display:inline-block;margin-left:.45em;color:rgba(242,255,252,.92);font-family:var(--mono);font-size:.48em;font-weight:500;line-height:1;vertical-align:.45em}.award-link:hover h3::after,#thesis .thesis-entry h3 a:hover::after{color:var(--cyan)}
+
+/* Section separators for thesis and academic path */
+#thesis .list article:first-child,#education .list article:first-child{border-top:1px solid var(--line)}

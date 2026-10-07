@@ -1,7 +1,7 @@
 "use strict";
 const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 let language=localStorage.getItem("language")||"en";
-function setLanguage(next){language=next;document.documentElement.lang=next;$$(`[data-${next}]`).forEach(el=>{const t=el.dataset[next];if(t)t.includes("<br>")?el.innerHTML=t:el.textContent=t});const b=$("#lang");if(b)b.textContent=next==="en"?"FR":"EN";localStorage.setItem("language",next)}
+function setLanguage(next){language=next;document.documentElement.lang=next;$$(`[data-${next}]`).forEach(el=>{const t=el.dataset[next];if(t)t.includes("<br>")?el.innerHTML=t:el.textContent=t});$$(`[data-href-${next}]`).forEach(el=>{el.href=el.dataset[next==="fr"?"hrefFr":"hrefEn"]});const b=$("#lang");if(b)b.textContent=next==="en"?"FR":"EN";localStorage.setItem("language",next)}
 $("#lang")?.addEventListener("click",()=>setLanguage(language==="en"?"fr":"en"));setLanguage(language);
 const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.1});$$(".reveal").forEach(e=>observer.observe(e));
 addEventListener("scroll",()=>{const max=document.documentElement.scrollHeight-innerHeight;const p=$("#progress");if(p)p.style.width=`${max?scrollY/max*100:0}%`},{passive:true});if($("#year"))$("#year").textContent=new Date().getFullYear();
