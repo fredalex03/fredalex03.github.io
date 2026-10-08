@@ -808,3 +808,19 @@ new LensedStarField();
     document.head.append(style);
   }
 })();
+
+// Final colour override for English-language talk badges.
+(() => {
+  if (document.querySelector("#talk-language-colour-override")) return;
+  const style = document.createElement("style");
+  style.id = "talk-language-colour-override";
+  style.textContent = `
+    .talk-language-en {
+      color: #b9a7ff !important;
+      -webkit-text-fill-color: #b9a7ff !important;
+      border-color: rgba(185, 167, 255, 0.5) !important;
+      background: rgba(185, 167, 255, 0.1) !important;
+    }
+  `;
+  document.head.append(style);
+})();
