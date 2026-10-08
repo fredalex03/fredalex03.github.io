@@ -1,488 +1,634 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="#040908" name="theme-color"/>
-<meta content="Frédéric-Alexandre Lacasse — mathematical physics, differential geometry, topology and gravitation." name="description"/>
-<title>
-   Frédéric-Alexandre Lacasse | Academic website
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="#040908" name="theme-color">
+  <meta content="Fr&eacute;d&eacute;ric-Alexandre Lacasse &mdash; mathematical physics, differential geometry, topology and gravitation." name="description">
+  <title>
+   Fr&eacute;d&eacute;ric-Alexandre Lacasse | Academic website
   </title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-<link href="assets/main.css" rel="stylesheet"/>
-<script defer="" src="assets/main.js">
-</script>
-</head>
-<body>
-<canvas aria-hidden="true" id="starfield">
-</canvas>
-<div id="progress">
-</div>
-<header>
-<nav class="wrap">
-<a class="brand" href="#home">
-<b>
-      F·A
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="assets/main.css" rel="stylesheet">
+  <script defer src="assets/main.js">
+  </script>
+ </head>
+ <body>
+  <canvas aria-hidden="true" id="starfield">
+  </canvas>
+  <div id="progress">
+  </div>
+  <header>
+   <nav class="wrap">
+    <a class="brand" href="#home">
+     <b>
+      F&middot;A
      </b>
      LACASSE
     </a>
-<div id="nav">
-<a data-en="About" data-fr="À propos" href="#about">
+    <div id="nav">
+     <a data-en="About" data-fr="&Agrave; propos" href="#about">
       About
      </a>
-<a href="#articles">
+     <a data-en="Academic path" data-fr="Parcours" href="#education">
+      Academic path
+     </a>
+     <a href="#articles">
       Articles
      </a>
-<a data-en="Academic work" data-fr="Travaux" href="#work">
-      Academic work
-     </a><a data-en="Thesis" data-fr="Mémoire" href="#thesis">Thesis</a><a data-en="Academic path" data-fr="Parcours" href="#education">Academic path</a>
-<a data-en="Talks" data-fr="Conférences" href="#talks">
+     <a data-en="Internships" data-fr="Stages" href="#work">
+      Internships
+     </a>
+     <a data-en="Theses" data-fr="M&eacute;moires" href="#thesis">
+      Theses
+     </a>
+     <a data-en="Talks" data-fr="Conf&eacute;rences" href="#talks">
       Talks
      </a>
-<a data-en="Awards" data-fr="Bourses" href="#awards">
+     <a data-en="Awards" data-fr="Bourses" href="#awards">
       Awards
      </a>
-</div>
-<button aria-label="Passer au français" id="lang">
+     <a data-en="Teaching" data-fr="Enseignement" href="#teaching">
+      Teaching
+     </a>
+    </div>
+    <button aria-label="Passer au fran&ccedil;ais" id="lang">
      FR
     </button>
-</nav>
-</header>
-<main>
-<section class="hero" id="home">
-<img alt="Abstract black hole and curved spacetime" src="assets/black-hole.png"/>
-<div class="shade">
-</div>
-<div class="wrap heroText reveal">
-<p class="micro" data-en="MATHEMATICAL PHYSICS · GEOMETRY · TOPOLOGY" data-fr="PHYSIQUE MATHÉMATIQUE · GÉOMÉTRIE · TOPOLOGIE">
-      MATHEMATICAL PHYSICS · GEOMETRY · TOPOLOGY
+   </nav>
+  </header>
+  <main>
+   <section class="hero" id="home">
+    <img alt="Abstract black hole and curved spacetime" src="assets/black-hole.png">
+    <div class="shade">
+    </div>
+    <div class="wrap heroText reveal">
+     <p class="micro" data-en="MATHEMATICAL PHYSICS &middot; GEOMETRY &middot; TOPOLOGY" data-fr="PHYSIQUE MATH&Eacute;MATIQUE &middot; G&Eacute;OM&Eacute;TRIE &middot; TOPOLOGIE">
+      MATHEMATICAL PHYSICS &middot; GEOMETRY &middot; TOPOLOGY
      </p>
-<h1>
-      Frédéric-Alexandre
-      <br/>
-<i>
+     <h1>
+      Fr&eacute;d&eacute;ric-Alexandre
+      <br>
+      <i>
        Lacasse
       </i>
-</h1>
-<p data-en="I study geometric structures in classical field theory and gravitation, with broader interests in differential geometry and topology." data-fr="J’étudie les structures géométriques des théories classiques des champs et de la gravitation, avec des intérêts en géométrie différentielle et en topologie.">
-      I study geometric structures in classical field theory and gravitation, with broader interests in differential geometry and topology.
+     </h1>
+     <p data-en="I study geometric structures in classical field theory and gravitation, with broader interests in differential geometry and topology." data-fr="J&rsquo;&eacute;tudie les structures g&eacute;om&eacute;triques des th&eacute;ories classiques des champs et de la gravitation, avec des int&eacute;r&ecirc;ts en g&eacute;om&eacute;trie diff&eacute;rentielle et en topologie.">
+      I study geometric structures in classical field theory and
+            gravitation, with broader interests in differential geometry and
+            topology.
      </p>
-<div aria-label="Academic profiles" class="academic-links">
-<a aria-label="arXiv profile" href="#" title="Add your arXiv URL">
-<span class="academic-icon text-icon">
+     <div aria-label="Academic profiles" class="academic-links">
+      <a aria-label="arXiv profile" href="#">
+       <span class="academic-icon text-icon">
         arXiv
        </span>
-</a>
-<a aria-label="ORCID profile" href="https://orcid.org/0009-0009-7678-188X" rel="noopener noreferrer" target="_blank" title="https://orcid.org/0009-0009-7678-188X">
-<span class="academic-icon orcid-icon">
+      </a>
+      <a aria-label="ORCID profile" href="https://orcid.org/0009-0009-7678-188X" rel="noopener noreferrer" target="_blank">
+       <span class="academic-icon orcid-icon">
         iD
        </span>
-</a>
-<a aria-label="Google Scholar profile" href="#" title="Add your Google Scholar URL">
-<span class="academic-icon scholar-icon">
+      </a>
+      <a aria-label="Google Scholar profile" href="#">
+       <span class="academic-icon scholar-icon">
         G
        </span>
-</a>
-</div>
-<figure aria-label="Portrait" class="hero-portrait"><img alt="Portrait" decoding="async" fetchpriority="high" loading="eager" src="assets/portrait.jpg"/></figure></div>
-</section>
-<section class="dark">
-<div class="wrap two">
-<div class="reveal">
-<p class="micro" data-en="01 / CAUSAL GEOMETRY" data-fr="01 / GÉOMÉTRIE CAUSALE">
+      </a>
+     </div>
+     <figure aria-label="Portrait" class="hero-portrait">
+      <img alt="Portrait" decoding="async" loading="eager" src="assets/portrait.jpg">
+     </figure>
+    </div>
+   </section>
+   <section class="dark">
+    <div class="wrap two">
+     <div class="reveal">
+      <p class="micro" data-en="01 / CAUSAL GEOMETRY" data-fr="01 / G&Eacute;OM&Eacute;TRIE CAUSALE">
        01 / CAUSAL GEOMETRY
       </p>
-<h2 data-en="From Galilean space to Carrollian time." data-fr="De l’espace galiléen au temps carrollien.">
+      <h2 data-en="From Galilean space to Carrollian time." data-fr="De l&rsquo;espace galil&eacute;en au temps carrollien.">
        From Galilean space to Carrollian time.
       </h2>
-<p class="muted" data-en="The animation reaches and holds both exact contraction limits. At Carroll, the cone collapses onto time; at Galilei, it collapses onto space." data-fr="L’animation atteint et maintient les deux limites exactes. À Carroll, le cône s’effondre sur le temps; à Galilée, il s’effondre sur l’espace.">
-       The animation reaches and holds both exact contraction limits. At Carroll, the cone collapses onto time; at Galilei, it collapses onto space.
+      <p class="muted" data-en="The filled causal cone evolves continuously between the Carroll and Galilei contraction limits." data-fr="Le c&ocirc;ne causal rempli &eacute;volue contin&ucirc;ment entre les limites de contraction de Carroll et de Galil&eacute;e.">
+       The filled causal cone evolves continuously between the Carroll
+              and Galilei contraction limits.
       </p>
-<div class="control">
-<span>
+      <div class="control">
+       <span>
         CARROLL
        </span>
-<input id="slider" max="100" min="0" type="range" value="0"/>
-<span>
+       <input id="slider" max="100" min="0" type="range" value="0">
+       <span>
         GALILEI
        </span>
-</div>
-<button id="play">
+      </div>
+      <button id="play">
        Pause evolution
       </button>
-</div>
-<div class="canvasbox reveal">
-<canvas id="cone">
-</canvas>
-<span class="c0">
-       c → 0
-      </span>
-<span class="ci">
-       c → ∞
-      </span>
-</div>
-</div>
-</section>
-<section class="wrap section two" id="about">
-<p class="micro" data-en="02 / ABOUT" data-fr="02 / À PROPOS">
+     </div>
+     <div class="canvasbox reveal">
+      <canvas id="cone">
+      </canvas>
+     </div>
+    </div>
+   </section>
+   <section class="wrap section two" id="about">
+    <p class="micro" data-en="02 / ABOUT" data-fr="02 / &Agrave; PROPOS">
      02 / ABOUT
     </p>
-<div class="reveal">
-<h2 data-en="Geometry as a language for fundamental physics." data-fr="La géométrie comme langage de la physique fondamentale.">
+    <div class="reveal">
+     <h2 data-en="Geometry as a language for fundamental physics." data-fr="La g&eacute;om&eacute;trie comme langage de la physique fondamentale.">
       Geometry as a language for fundamental physics.
      </h2>
-<p class="lead" data-en="I am a mathematics student at Université de Montréal working at the interface of geometry and physics. My interests include differential geometry, topology, mathematical relativity and classical field theory." data-fr="Je suis étudiant en mathématiques à l’Université de Montréal et je travaille à l’interface de la géométrie et de la physique. Mes intérêts comprennent la géométrie différentielle, la topologie, la relativité mathématique et la théorie classique des champs.">
-      I am a mathematics student at Université de Montréal working at the interface of geometry and physics. My interests include differential geometry, topology, mathematical relativity and classical field theory.
+     <p class="lead" data-en="I am a mathematics student at Universit&eacute; de Montr&eacute;al working at the interface of geometry and physics." data-fr="Je suis &eacute;tudiant en math&eacute;matiques &agrave; l&rsquo;Universit&eacute; de Montr&eacute;al et je travaille &agrave; l&rsquo;interface de la g&eacute;om&eacute;trie et de la physique.">
+      I am a mathematics student at Universit&eacute; de Montr&eacute;al
+            working at the interface of geometry and physics.
      </p>
-<div class="chips">
-<span>
+     <div class="chips">
+      <span>
        Differential geometry
       </span>
-<span>
+      <span>
        Topology
       </span>
-<span>
+      <span>
        Mathematical relativity
       </span>
-<span>
+      <span>
        Classical field theory
       </span>
-<span>
+      <span>
        Covariant phase space
       </span>
-<span>
+      <span>
        Carrollian geometry
       </span>
-</div>
-</div>
-</section>
-<div aria-hidden="true" class="added-section-divider">
-</div>
-<div aria-hidden="true" class="added-section-divider"></div><section class="wrap section" id="education"><div class="heading reveal"><p class="micro" data-en="03 / ACADEMIC PATH" data-fr="03 / PARCOURS UNIVERSITAIRE">03 / ACADEMIC PATH</p><h2 data-en="Academic path" data-fr="Parcours universitaire">Academic path</h2></div><div class="list reveal"><article><time data-en="JAN 2027–" data-fr="JANV. 2027–">JAN 2027–</time><div><h3 data-en="Ph.D. in Mathematics" data-fr="Doctorat en mathématiques">Ph.D. in Mathematics</h3><p data-en="Université de Montréal · Supervisor: Juan Margalef Bentabol · Co-supervisor: Eduardo J. S. Villaseñor" data-fr="Université de Montréal · Directeur : Juan Margalef Bentabol · Codirecteur : Eduardo J. S. Villaseñor">Université de Montréal · Supervisor: Juan Margalef Bentabol · Co-supervisor: Eduardo J. S. Villaseñor</p><p data-en="Beginning January 2027" data-fr="Début en janvier 2027">Beginning January 2027</p></div></article><article><time data-en="JAN 2024 – DEC 2026" data-fr="JANV. 2024 – DÉC. 2026">JAN 2024 – DEC 2026</time><div><h3 data-en="B.Sc. in Pure and Applied Mathematics" data-fr="Baccalauréat en mathématiques pures et appliquées">B.Sc. in Pure and Applied Mathematics</h3><p data-en="Université de Montréal · GPA: 4.3/4.3" data-fr="Université de Montréal · Moyenne cumulative : 4,3/4,3">Université de Montréal · GPA: 4.3/4.3</p><p data-en="Ongoing · Expected completion: December 2026" data-fr="En cours · Fin prévue : décembre 2026">Ongoing · Expected completion: December 2026</p></div></article></div></section><div aria-hidden="true" class="added-section-divider"></div><section class="wrap section" id="articles">
-<div class="heading reveal">
-<p class="micro" data-en="04 / ARTICLES" data-fr="04 / ARTICLES">04 / ARTICLES</p>
-<h2 data-en="Articles &amp; preprints" data-fr="Articles et prépublications">
-      Articles &amp; preprints
+     </div>
+    </div>
+   </section>
+   <div aria-hidden="true" class="added-section-divider">
+   </div>
+   <section class="wrap section" id="education">
+    <div class="heading reveal">
+     <p class="micro" data-en="03 / ACADEMIC PATH" data-fr="03 / PARCOURS UNIVERSITAIRE">
+      03 / ACADEMIC PATH
+     </p>
+     <h2 data-en="Academic path" data-fr="Parcours universitaire">
+      Academic path
      </h2>
-</div>
-<div class="empty reveal">
-<b>
-      ∅
+    </div>
+    <div class="list reveal">
+     <article>
+      <time data-en="JAN 2027&ndash;" data-fr="JANV. 2027&ndash;">
+       JAN 2027&ndash;
+      </time>
+      <div>
+       <h3 data-en="Ph.D. in Mathematics" data-fr="Doctorat en math&eacute;matiques">
+        Ph.D. in Mathematics
+       </h3>
+       <p data-en="Universit&eacute; de Montr&eacute;al &middot; Supervisor: Juan Margalef Bentabol &middot; Co-supervisor: Eduardo J. S. Villase&ntilde;or" data-fr="Universit&eacute; de Montr&eacute;al &middot; Directeur : Juan Margalef Bentabol &middot; Codirecteur : Eduardo J. S. Villase&ntilde;or">
+        Universit&eacute; de Montr&eacute;al &middot; Supervisor: Juan
+                Margalef Bentabol &middot; Co-supervisor: Eduardo J. S.
+                Villase&ntilde;or
+       </p>
+       <p data-en="Beginning January 2027" data-fr="D&eacute;but en janvier 2027">
+        Beginning January 2027
+       </p>
+      </div>
+     </article>
+     <article>
+      <time data-en="JAN 2024 &ndash; DEC 2027" data-fr="JANV. 2024 &ndash; D&Eacute;C. 2027">
+       JAN 2024 &ndash; DEC 2027
+      </time>
+      <div>
+       <h3 data-en="B.Sc. in Pure and Applied Mathematics" data-fr="Baccalaur&eacute;at en math&eacute;matiques pures et appliqu&eacute;es">
+        B.Sc. in Pure and Applied Mathematics
+       </h3>
+       <p data-en="Universit&eacute; de Montr&eacute;al &middot; GPA: 4.3/4.3" data-fr="Universit&eacute; de Montr&eacute;al &middot; Moyenne cumulative : 4,3/4,3">
+        Universit&eacute; de Montr&eacute;al &middot; GPA: 4.3/4.3
+       </p>
+       <p data-en="Ongoing &middot; Expected completion: December 2027" data-fr="En cours &middot; Fin pr&eacute;vue : d&eacute;cembre 2027">
+        Ongoing &middot; Expected completion: December 2027
+       </p>
+      </div>
+     </article>
+    </div>
+   </section>
+   <div aria-hidden="true" class="added-section-divider">
+   </div>
+   <section class="wrap section" id="articles">
+    <div class="heading reveal">
+     <p class="micro">
+      04 / ARTICLES
+     </p>
+     <h2 data-en="Articles & preprints" data-fr="Articles et pr&eacute;publications">
+      Articles & preprints
+     </h2>
+    </div>
+    <div class="empty reveal">
+     <b>
+      &empty;
      </b>
-<div>
-<h3 data-en="No public articles yet." data-fr="Aucun article public pour l’instant.">
+     <div>
+      <h3 data-en="No public articles yet." data-fr="Aucun article public pour l&rsquo;instant.">
        No public articles yet.
       </h3>
-<p class="muted" data-en="Articles and preprints will be listed here as they become available." data-fr="Les articles et prépublications seront ajoutés ici dès qu’ils seront disponibles.">
-       Articles and preprints will be listed here as they become available.
+      <p class="muted" data-en="Articles and preprints will be listed here as they become available." data-fr="Les articles et pr&eacute;publications seront ajout&eacute;s ici d&egrave;s qu&rsquo;ils seront disponibles.">
+       Articles and preprints will be listed here as they become
+              available.
       </p>
-</div>
-</div>
-</section>
-<section class="dark section" id="work">
-<div class="wrap">
-<div class="heading reveal">
-<p class="micro" data-en="05 / ACADEMIC WORK" data-fr="05 / TRAVAUX UNIVERSITAIRES">05 / ACADEMIC WORK</p>
-<h2 data-en="Research internships" data-fr="Stages de recherche">Research internships</h2>
-</div>
-<div class="list reveal">
-<article>
-<time data-en="2026" data-fr="2026">
+     </div>
+    </div>
+   </section>
+   <section class="dark section" id="work">
+    <div class="wrap">
+     <div class="heading reveal">
+      <p class="micro" data-en="05 / RESEARCH INTERNSHIPS" data-fr="05 / STAGES DE RECHERCHE">
+       05 / RESEARCH INTERNSHIPS
+      </p>
+      <h2 data-en="Research internships" data-fr="Stages de recherche">
+       Research internships
+      </h2>
+     </div>
+     <div class="list reveal">
+      <article>
+       <time>
         2026
        </time>
-<div>
-<h3 data-en="Covariant phase space of Weyl transverse gravity with boundaries" data-fr="Espace des phases covariant de la gravitation transverse de Weyl avec frontières">
-         Covariant phase space of Weyl transverse gravity with boundaries
+       <div>
+        <h3>
+         Covariant phase space of Weyl transverse gravity with
+                  boundaries
         </h3>
-<p>
-         Université de Montréal · Juan Margalef Bentabol
+        <p>
+         Universit&eacute; de Montr&eacute;al &middot; Juan Margalef
+                  Bentabol
         </p>
-</div>
-</article>
-<article>
-<time data-en="2025" data-fr="2025">
+       </div>
+      </article>
+      <article>
+       <time>
         2025
        </time>
-<div>
-<h3 data-en="Planar Banach isometry conjecture for the Hilbert metric" data-fr="Conjecture d’isométrie planaire de Banach pour la métrique de Hilbert">
+       <div>
+        <h3>
          Planar Banach isometry conjecture for the Hilbert metric
         </h3>
-<p>
-         Université de Montréal · Dmitry Faifman
+        <p>
+         Universit&eacute; de Montr&eacute;al &middot; Dmitry Faifman
         </p>
-</div>
-</article>
-<article>
-<time data-en="2024" data-fr="2024">
+       </div>
+      </article>
+      <article>
+       <time>
         2024
        </time>
-<div>
-<h3 data-en="Introduction to differential topology through the Poincaré–Hopf theorem" data-fr="Introduction à la topologie différentielle à travers le théorème de Poincaré–Hopf">
-         Introduction to differential topology through the Poincaré–Hopf theorem
+       <div>
+        <h3>
+         Introduction to differential topology through the
+                  Poincar&eacute;&ndash;Hopf theorem
         </h3>
-<p>
-         Université de Montréal · Octavian Cornea
+        <p>
+         Universit&eacute; de Montr&eacute;al &middot; Octavian Cornea
         </p>
-</div>
-</article>
-</div>
-</div>
-</section><div aria-hidden="true" class="added-section-divider"></div><section class="wrap section" id="thesis"><div class="heading reveal"><p class="micro" data-en="06 / THESIS" data-fr="06 / MÉMOIRE">06 / THESIS</p><h2 data-en="Undergraduate thesis" data-fr="Mémoire de fin d’études">Undergraduate thesis</h2></div><div class="list reveal"><article class="thesis-entry"><time>2026</time><div><small data-en="B.SC. IN MATHEMATICS · UNIVERSITÉ DE MONTRÉAL" data-fr="B.SC. EN MATHÉMATIQUES · UNIVERSITÉ DE MONTRÉAL">B.SC. IN MATHEMATICS · UNIVERSITÉ DE MONTRÉAL</small><h3><a data-en="Covariant phase space of Weyl transverse gravity with boundaries" data-fr="Espace des phases covariant de la gravitation transverse de Weyl avec frontières" href="assets/memoire-bac.pdf" rel="noopener noreferrer" target="_blank">Covariant phase space of Weyl transverse gravity with boundaries</a></h3><p data-en="Undergraduate thesis supervised by Juan Margalef Bentabol · August 2026" data-fr="Mémoire de fin d’études sous la direction de Juan Margalef Bentabol · Août 2026">Undergraduate thesis supervised by Juan Margalef Bentabol · August 2026</p></div></article></div></section>
-<div aria-hidden="true" class="added-section-divider"></div><section class="wrap section talks-section" id="talks">
-<div class="heading reveal">
-<p class="micro" data-en="07 / TALKS" data-fr="07 / CONFÉRENCES">07 / TALKS</p>
-<h2 data-en="Talks &amp; outreach" data-fr="Conférences et vulgarisation">
-      Talks &amp; outreach
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="wrap section" id="thesis">
+    <div class="heading reveal">
+     <p class="micro" data-en="06 / THESES" data-fr="06 / M&Eacute;MOIRES">
+      06 / THESES
+     </p>
+     <h2 data-en="Theses" data-fr="M&eacute;moires">
+      Theses
      </h2>
-</div>
-<div class="talk-list reveal">
-<article>
-<time data-en="12 AUG 2026" data-fr="12 AOÛT 2026">
+    </div>
+    <div class="thesis-grid reveal">
+     <a aria-label="Open thesis PDF" class="thesis-card-link" href="assets/memoire-bac.pdf" rel="noopener noreferrer" target="_blank">
+      <article class="thesis-card">
+       <div class="thesis-card-meta">
+        <span class="thesis-year">
+         2026
+        </span>
+        <span class="thesis-kind" data-en="BACHELOR THESIS" data-fr="M&Eacute;MOIRE DE BACCALAUR&Eacute;AT">
+         BACHELOR THESIS
+        </span>
+       </div>
+       <small class="thesis-school" data-en="B.SC. IN MATHEMATICS &middot; UNIVERSIT&Eacute; DE MONTR&Eacute;AL" data-fr="B.SC. EN MATH&Eacute;MATIQUES &middot; UNIVERSIT&Eacute; DE MONTR&Eacute;AL">
+        B.SC. IN MATHEMATICS &middot; UNIVERSIT&Eacute; DE
+                MONTR&Eacute;AL
+       </small>
+       <h3 data-en="Covariant phase space of Weyl transverse gravity with boundaries" data-fr="Espace des phases covariant de la gravitation transverse de Weyl avec fronti&egrave;res">
+        Covariant phase space of Weyl transverse gravity with boundaries
+       </h3>
+       <p class="thesis-summary" data-en="Undergraduate thesis supervised by Juan Margalef Bentabol &middot; August 2026" data-fr="M&eacute;moire de fin d&rsquo;&eacute;tudes sous la direction de Juan Margalef Bentabol &middot; Ao&ucirc;t 2026">
+        Undergraduate thesis supervised by Juan Margalef Bentabol
+                &middot; August 2026
+       </p>
+       <span class="thesis-open" data-en="OPEN PDF &nearrow;" data-fr="OUVRIR LE PDF &nearrow;">
+        OPEN PDF &nearrow;
+       </span>
+      </article>
+     </a>
+    </div>
+   </section>
+   <div aria-hidden="true" class="added-section-divider">
+   </div>
+   <section class="wrap section talks-section" id="talks">
+    <div class="heading reveal">
+     <p class="micro" data-en="07 / TALKS" data-fr="07 / CONF&Eacute;RENCES">
+      07 / TALKS
+     </p>
+     <h2 data-en="Talks & outreach" data-fr="Conf&eacute;rences et vulgarisation">
+      Talks & outreach
+     </h2>
+    </div>
+    <div class="talk-list reveal">
+     <article>
+      <time>
        12 AUG 2026
       </time>
-<div>
-<small data-en="MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL" data-fr="CLUB DE MATHÉMATIQUES · UNIVERSITÉ DE MONTRÉAL">
-        MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL
+      <div>
+       <small>
+        MATHEMATICS CLUB &middot; UNIVERSIT&Eacute; DE MONTR&Eacute;AL
        </small>
-<h3 data-en="Bundles, curvature and classical field theory: a covariant viewpoint" data-fr="Fibrés, courbure et théorie classique des champs : un point de vue covariant">
-        Bundles, curvature and classical field theory: a covariant viewpoint
+       <h3>
+        Bundles, curvature and classical field theory: a covariant
+                viewpoint
        </h3>
-</div>
-</article>
-<article>
-<time data-en="27 JUN 2026" data-fr="27 JUIN 2026">
+      </div>
+     </article>
+     <article>
+      <time>
        27 JUN 2026
       </time>
-<div>
-<small data-en="CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE · McMASTER UNIVERSITY" data-fr="CONGRÈS CANADIEN DES ÉTUDIANTS EN MATHÉMATIQUES · UNIVERSITÉ McMASTER">
-        CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE · McMASTER UNIVERSITY
+      <div>
+       <small>
+        CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE &middot; McMASTER
+                UNIVERSITY
        </small>
-<h3 data-en="Calculus of variations: motivations towards classical field theory" data-fr="Calcul des variations : motivations vers la théorie classique des champs">
-        Calculus of variations: motivations towards classical field theory
+       <h3>
+        Calculus of variations: motivations towards classical field
+                theory
        </h3>
-</div>
-</article>
-<article>
-<time data-en="15 JUL 2026" data-fr="15 JUIL. 2026">
+      </div>
+     </article>
+     <article>
+      <time>
        15 JUL 2026
       </time>
-<div>
-<small data-en="EXPÉRIUM WEEK · OUTREACH" data-fr="EXPÉRIUM WEEK · OUTREACH">
-        EXPÉRIUM WEEK · OUTREACH
+      <div>
+       <small>
+        EXP&Eacute;RIUM WEEK &middot; OUTREACH
        </small>
-<h3 data-en="Non-Euclidean geometry, curvature, gravitation and cosmology" data-fr="Géométrie non euclidienne, courbure, gravitation et cosmologie">
+       <h3>
         Non-Euclidean geometry, curvature, gravitation and cosmology
        </h3>
-</div>
-</article>
-<article>
-<time data-en="10 JAN 2026" data-fr="10 JANV. 2026">
+      </div>
+     </article>
+     <article>
+      <time>
        10 JAN 2026
       </time>
-<div>
-<small data-en="SUMM 2026 · MONTRÉAL" data-fr="SUMM 2026 · MONTRÉAL">
-        SUMM 2026 · MONTRÉAL
+      <div>
+       <small>
+        SUMM 2026 &middot; MONTR&Eacute;AL
        </small>
-<h3 data-en="When mathematics precedes physics: from Riemann to black holes" data-fr="Quand les mathématiques précèdent la physique : de Riemann aux trous noirs">
+       <h3>
         When mathematics precedes physics: from Riemann to black holes
        </h3>
-</div>
-</article>
-<article>
-<time data-en="06 AUG 2025" data-fr="6 AOÛT 2025">
+      </div>
+     </article>
+     <article>
+      <time>
        06 AUG 2025
       </time>
-<div>
-<small data-en="MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL" data-fr="CLUB DE MATHÉMATIQUES · UNIVERSITÉ DE MONTRÉAL">
-        MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL
+      <div>
+       <small>
+        MATHEMATICS CLUB &middot; UNIVERSIT&Eacute; DE MONTR&Eacute;AL
        </small>
-<h3 data-en="Projective geometry and convex geometry" data-fr="Géométrie projective et géométrie convexe">
+       <h3>
         Projective geometry and convex geometry
        </h3>
-</div>
-</article>
-<article>
-<time data-en="24 JUN 2025" data-fr="24 JUIN 2025">
+      </div>
+     </article>
+     <article>
+      <time>
        24 JUN 2025
       </time>
-<div>
-<small data-en="CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE · UNIVERSITY OF WATERLOO" data-fr="CONGRÈS CANADIEN DES ÉTUDIANTS EN MATHÉMATIQUES · UNIVERSITÉ DE WATERLOO">
-        CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE · UNIVERSITY OF WATERLOO
+      <div>
+       <small>
+        CANADIAN UNDERGRADUATE MATHEMATICS CONFERENCE &middot;
+                UNIVERSITY OF WATERLOO
        </small>
-<h3 data-en="Rescuing polynomials: a differential topology perspective" data-fr="Sauver les polynômes : une perspective de topologie différentielle">
+       <h3>
         Rescuing polynomials: a differential topology perspective
        </h3>
-</div>
-</article>
-<article>
-<time data-en="11 JAN 2025" data-fr="11 JANV. 2025">
+      </div>
+     </article>
+     <article>
+      <time>
        11 JAN 2025
       </time>
-<div>
-<small data-en="SUMM 2025 · MONTRÉAL" data-fr="SUMM 2025 · MONTRÉAL">
-        SUMM 2025 · MONTRÉAL
+      <div>
+       <small>
+        SUMM 2025 &middot; MONTR&Eacute;AL
        </small>
-<h3 data-en="From topology to polynomials" data-fr="De la topologie aux polynômes">
+       <h3>
         From topology to polynomials
        </h3>
-</div>
-</article>
-<article>
-<time data-en="22 AUG 2024" data-fr="22 AOÛT 2024">
+      </div>
+     </article>
+     <article>
+      <time>
        22 AUG 2024
       </time>
-<div>
-<small data-en="MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL" data-fr="CLUB DE MATHÉMATIQUES · UNIVERSITÉ DE MONTRÉAL">
-        MATHEMATICS CLUB · UNIVERSITÉ DE MONTRÉAL
+      <div>
+       <small>
+        MATHEMATICS CLUB &middot; UNIVERSIT&Eacute; DE MONTR&Eacute;AL
        </small>
-<h3 data-en="Introduction to differential topology through Brouwer’s fixed-point theorem" data-fr="Introduction à la topologie différentielle à travers le théorème du point fixe de Brouwer">
-        Introduction to differential topology through Brouwer’s fixed-point theorem
+       <h3>
+        Introduction to differential topology through Brouwer&rsquo;s
+                fixed-point theorem
        </h3>
-</div>
-</article>
-</div>
-</section>
-<div aria-hidden="true" class="added-section-divider">
-</div>
-<section class="wrap section" id="awards">
-<div class="heading reveal">
-<p class="micro" data-en="08 / AWARDS &amp; FUNDING" data-fr="08 / BOURSES ET DISTINCTIONS">08 / AWARDS &amp; FUNDING</p>
-<h2 data-en="Selected recognition" data-fr="Distinctions sélectionnées">
+      </div>
+     </article>
+    </div>
+   </section>
+   <div aria-hidden="true" class="added-section-divider">
+   </div>
+   <section class="wrap section" id="awards">
+    <div class="heading reveal">
+     <p class="micro" data-en="08 / AWARDS & FUNDING" data-fr="08 / BOURSES ET DISTINCTIONS">
+      08 / AWARDS & FUNDING
+     </p>
+     <h2 data-en="Selected recognition" data-fr="Distinctions s&eacute;lectionn&eacute;es">
       Selected recognition
      </h2>
-</div>
-<div class="awards reveal">
-<article><a class="award-link" data-href-en="https://nserc-crsng.canada.ca/en/funding-opportunity/canada-graduate-research-scholarship-masters-program" data-href-fr="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-detudes-superieures-en-recherche-du-canada-au-niveau-de-la" href="https://nserc-crsng.canada.ca/en/funding-opportunity/canada-graduate-research-scholarship-masters-program" rel="noopener noreferrer" target="_blank">
-<time data-en="2027" data-fr="2027">
-       2027
-      </time>
-<h3 data-en="Canada Graduate Scholarship — Master’s" data-fr="Bourse d’études supérieures du Canada — Maîtrise">
-       Canada Graduate Scholarship — Master’s
-      </h3>
-<p>
-<span data-en="NSERC" data-fr="CRSNG">
-        NSERC
-       </span>
-       · $27,000
+    </div>
+    <div class="awards reveal">
+     <article>
+      <a class="award-link" data-href-en="https://nserc-crsng.canada.ca/en/funding-opportunity/canada-graduate-research-scholarship-masters-program" data-href-fr="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-detudes-superieures-en-recherche-du-canada-au-niveau-de-la" href="https://nserc-crsng.canada.ca/en/funding-opportunity/canada-graduate-research-scholarship-masters-program" rel="noopener noreferrer" target="_blank">
+       <time>
+        2027
+       </time>
+       <h3 data-en="Canada Graduate Scholarship &mdash; Master&rsquo;s" data-fr="Bourse d&rsquo;&eacute;tudes sup&eacute;rieures du Canada &mdash; Ma&icirc;trise">
+        Canada Graduate Scholarship &mdash; Master&rsquo;s
+       </h3>
+       <p>
+        <span data-en="NSERC" data-fr="CRSNG">
+         NSERC
+        </span>
+        &middot; $27,000
+       </p>
+      </a>
+     </article>
+     <article>
+      <a class="award-link" data-href-en="https://nserc-crsng.canada.ca/en/funding-opportunity/undergraduate-student-research-awards" data-href-fr="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-de-recherche-de-1er-cycle" href="https://nserc-crsng.canada.ca/en/funding-opportunity/undergraduate-student-research-awards" rel="noopener noreferrer" target="_blank">
+       <time>
+        2025 & 2026
+       </time>
+       <h3 data-en="Undergraduate Student Research Award" data-fr="Bourse de recherche de 1er cycle">
+        Undergraduate Student Research Award
+       </h3>
+       <p>
+        <span data-en="NSERC" data-fr="CRSNG">
+         NSERC
+        </span>
+        &middot; $7,500
+       </p>
+      </a>
+     </article>
+     <article>
+      <a class="award-link" href="https://dms.umontreal.ca/fr/ressources-et-services/soutien-financier" rel="noopener noreferrer" target="_blank">
+       <time>
+        2025
+       </time>
+       <h3 data-en="Jean-Maranda Prize" data-fr="Prix Jean-Maranda">
+        Jean-Maranda Prize
+       </h3>
+       <p>
+        Universit&eacute; de Montr&eacute;al &middot; $1,000
+       </p>
+      </a>
+     </article>
+     <article>
+      <a class="award-link" href="https://fas.umontreal.ca/etudes/ceremonie-annuelle-de-remise-de-bourses/titulaires-de-bourses-2025/" rel="noopener noreferrer" target="_blank">
+       <time>
+        2025
+       </time>
+       <h3 data-en="Dean&rsquo;s Excellence Scholarship" data-fr="Bourse du doyen de la FAS">
+        Dean&rsquo;s Excellence Scholarship
+       </h3>
+       <p>
+        Universit&eacute; de Montr&eacute;al &middot; $2,000
+       </p>
+      </a>
+     </article>
+    </div>
+   </section>
+   <div aria-hidden="true" class="added-section-divider">
+   </div>
+   <section class="wrap section" id="teaching">
+    <div class="heading reveal">
+     <p class="micro" data-en="09 / TEACHING EXPERIENCE" data-fr="09 / EXP&Eacute;RIENCE D&rsquo;ENSEIGNEMENT">
+      09 / TEACHING EXPERIENCE
+     </p>
+     <div>
+      <h2 data-en="Teaching experience" data-fr="Exp&eacute;rience d&rsquo;enseignement">
+       Teaching experience
+      </h2>
+      <p class="teaching-intro" data-en="Teaching assistantships at Universit&eacute; de Montr&eacute;al." data-fr="Auxiliariats d&rsquo;enseignement &agrave; l&rsquo;Universit&eacute; de Montr&eacute;al.">
+       Teaching assistantships at Universit&eacute; de Montr&eacute;al.
       </p>
-</a></article>
-<article><a class="award-link" data-href-en="https://nserc-crsng.canada.ca/en/funding-opportunity/undergraduate-student-research-awards" data-href-fr="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-de-recherche-de-1er-cycle" href="https://nserc-crsng.canada.ca/en/funding-opportunity/undergraduate-student-research-awards" rel="noopener noreferrer" target="_blank">
-<time data-en="2025 &amp; 2026" data-fr="2025 &amp; 2026">
-       2025 &amp; 2026
-      </time>
-<h3 data-en="Undergraduate Student Research Award" data-fr="Bourse de recherche de 1er cycle">
-       Undergraduate Student Research Award
+     </div>
+    </div>
+    <div class="teaching-grid reveal">
+     <article class="teaching-card">
+      <span class="teaching-term" data-en="FALL 2024" data-fr="AUTOMNE 2024">
+       FALL 2024
+      </span>
+      <h3 data-en="Calculus I" data-fr="Calcul 1">
+       Calculus I
       </h3>
-<p>
-<span data-en="NSERC" data-fr="CRSNG">
-        NSERC
-       </span>
-       · $7,500
+      <p>
+       MAT1400
       </p>
-</a></article>
-<article><a class="award-link" data-href-en="https://dms.umontreal.ca/fr/ressources-et-services/soutien-financier" data-href-fr="https://dms.umontreal.ca/fr/ressources-et-services/soutien-financier" href="https://dms.umontreal.ca/fr/ressources-et-services/soutien-financier" rel="noopener noreferrer" target="_blank">
-<time data-en="2025" data-fr="2025">
-       2025
-      </time>
-<h3 data-en="Jean-Maranda Prize" data-fr="Prix Jean-Maranda">
-       Jean-Maranda Prize
+      <small>
+       Universit&eacute; de Montr&eacute;al
+      </small>
+     </article>
+     <article class="teaching-card">
+      <span class="teaching-term" data-en="FALL 2025" data-fr="AUTOMNE 2025">
+       FALL 2025
+      </span>
+      <h3 data-en="Differential Calculus" data-fr="Calcul diff&eacute;rentiel">
+       Differential Calculus
       </h3>
-<p data-en="Department of Mathematics and Statistics, Université de Montréal · $1,000" data-fr="Département de mathématiques et de statistique, Université de Montréal · 1 000 $">
-       Department of Mathematics and Statistics, Université de Montréal · $1,000
+      <p>
+       MAT1903
       </p>
-</a></article>
-<article><a class="award-link" data-href-en="https://fas.umontreal.ca/etudes/ceremonie-annuelle-de-remise-de-bourses/titulaires-de-bourses-2025/" data-href-fr="https://fas.umontreal.ca/etudes/ceremonie-annuelle-de-remise-de-bourses/titulaires-de-bourses-2025/" href="https://fas.umontreal.ca/etudes/ceremonie-annuelle-de-remise-de-bourses/titulaires-de-bourses-2025/" rel="noopener noreferrer" target="_blank">
-<time data-en="2025" data-fr="2025">
-       2025
-      </time>
-<h3 data-en="Dean’s Excellence Scholarship" data-fr="Bourse du doyen de la FAS">
-       Dean’s Excellence Scholarship
+      <h3 data-en="Applied Analysis" data-fr="Analyse appliqu&eacute;e">
+       Applied Analysis
       </h3>
-<p>
-       Université de Montréal · $2,000
+      <p>
+       MAT2466
       </p>
-</a></article>
-</div>
-</section>
-<section class="contact" id="contact">
-<div class="wrap">
-<p class="micro" data-en="09 / CONTACT" data-fr="09 / CONTACT">09 / CONTACT</p>
-<h2 data-en="Let’s talk about geometry,&lt;br&gt;&lt;i&gt;topology and gravity.&lt;/i&gt;" data-fr="Parlons de géométrie,&lt;br&gt;&lt;i&gt;de topologie et de gravitation.&lt;/i&gt;">
-      Let’s talk about geometry,
-      <br/>
-<i>
+      <small>
+       Universit&eacute; de Montr&eacute;al
+      </small>
+     </article>
+     <article class="teaching-card">
+      <span class="teaching-term" data-en="FALL 2026" data-fr="AUTOMNE 2026">
+       FALL 2026
+      </span>
+      <h3 data-en="Calculus I" data-fr="Calcul 1">
+       Calculus I
+      </h3>
+      <p>
+       MAT1400
+      </p>
+      <h3 data-en="Integral Calculus" data-fr="Calcul int&eacute;gral">
+       Integral Calculus
+      </h3>
+      <p>
+       MAT1923
+      </p>
+      <small>
+       Universit&eacute; de Montr&eacute;al
+      </small>
+     </article>
+    </div>
+   </section>
+   <section class="contact" id="contact">
+    <div class="wrap">
+     <p class="micro">
+      10 / CONTACT
+     </p>
+     <h2 data-en="Let&rsquo;s talk about geometry,&lt;br&gt;&lt;i&gt;topology and gravity.&lt;/i&gt;" data-fr="Parlons de g&eacute;om&eacute;trie,&lt;br&gt;&lt;i&gt;de topologie et de gravitation.&lt;/i&gt;">
+      Let&rsquo;s talk about geometry,
+      <br>
+      <i>
        topology and gravity.
       </i>
-</h2>
-<a class="email" href="mailto:frederic-alexandre.lacasse@umontreal.ca">
-      FREDERIC-ALEXANDRE.LACASSE@UMONTREAL.CA ↗
+     </h2>
+     <a class="email" href="mailto:frederic-alexandre.lacasse@umontreal.ca">
+      FREDERIC-ALEXANDRE.LACASSE@UMONTREAL.CA &nearrow;
      </a>
-</div>
-</section>
-</main>
-<footer>
-<div class="wrap">
-    ©
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="wrap">
+    &copy;
     <span id="year">
-</span>
-    Frédéric-Alexandre Lacasse
+    </span>
+    Fr&eacute;d&eacute;ric-Alexandre Lacasse
    </div>
-</footer>
-<!-- Added orbit overlay for section 01 -->
-<script>
-  (() => {
-    const canvas = document.getElementById("cone");
-    if (!canvas) return;
-
-    const slider = document.getElementById("slider");
-    const context = canvas.getContext("2d");
-    let phase = 0;
-    let lastFrame = performance.now();
-
-    function drawOrbit(now) {
-      const delta = Math.min((now - lastFrame) / 1000, 0.05);
-      lastFrame = now;
-      phase += delta * 0.72;
-
-      const box = canvas.getBoundingClientRect();
-      const scaleX = box.width ? canvas.width / box.width : 1;
-      const scaleY = box.height ? canvas.height / box.height : 1;
-      const cx = canvas.width / 2;
-      const cy = canvas.height / 2;
-      const value = slider ? Number(slider.value) / 100 : 0.5;
-
-      const horizontal = Math.max(10 * scaleX, Math.sin(value * Math.PI / 2) * Math.min(canvas.width, canvas.height) * 0.081);
-      const vertical = Math.max(10 * scaleY, Math.cos(value * Math.PI / 2) * Math.min(canvas.width, canvas.height) * 0.081);
-
-      context.save();
-      context.strokeStyle = "rgba(213, 255, 98, 0.30)";
-      context.lineWidth = Math.max(1, scaleX);
-      context.beginPath();
-      context.ellipse(cx, cy, horizontal, vertical, 0, 0, Math.PI * 2);
-      context.stroke();
-
-      context.fillStyle = "#d5ff62";
-      context.shadowColor = "rgba(213, 255, 98, 0.75)";
-      context.shadowBlur = 8 * scaleX;
-      context.beginPath();
-      context.arc(
-        cx + Math.cos(phase) * horizontal,
-        cy + Math.sin(phase) * vertical,
-        4 * scaleX,
-        0,
-        Math.PI * 2
-      );
-      context.fill();
-      context.restore();
-
-      requestAnimationFrame(drawOrbit);
-    }
-
-    requestAnimationFrame(drawOrbit);
-  })();
-  </script>
-</body>
+  </footer>
+ </body>
 </html>
