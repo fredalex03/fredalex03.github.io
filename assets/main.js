@@ -36,6 +36,77 @@ addEventListener(
   { passive: true },
 );
 if ($("#year")) $("#year").textContent = new Date().getFullYear();
+
+// Active navigation section
+function setupActiveNavigation() {
+  const links = $$("#nav a[href^='#']");
+  const sections = links
+    .map((link) => document.querySelector(link.hash))
+    .filter(Boolean);
+
+  if (!links.length || !sections.length) return;
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #nav a {
+      position: relative;
+      padding-bottom: 7px;
+    }
+
+    #nav a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    #nav a.is-active {
+      color: var(--cyan);
+      -webkit-text-fill-color: var(--cyan);
+      opacity: 1;
+    }
+
+    #nav a.is-active::after {
+      transform: scaleX(1);
+    }
+  `;
+  document.head.append(style);
+
+  const setActiveLink = (sectionId) => {
+    links.forEach((link) => {
+      const isActive = link.hash === `#${sectionId}`;
+      link.classList.toggle("is-active", isActive);
+
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const current = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (current) setActiveLink(current.target.id);
+    },
+    {
+      rootMargin: "-30% 0px -60% 0px",
+      threshold: [0, 0.2, 0.5],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+setupActiveNavigation();
+
 class ConeAnimation {
   constructor() {
     this.canvas = $("#cone");
