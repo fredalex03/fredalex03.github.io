@@ -280,7 +280,6 @@ h3 {
 .heading h2,
 .talks-section h2,
 #articles h2,
-#profiles h2,
 #awards h2 {
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
@@ -334,23 +333,6 @@ canvas {
   height: 100%;
 }
 
-.c0,
-.ci {
-  position: absolute;
-  bottom: 12px;
-  font: 400 10px var(--mono);
-}
-
-.c0 {
-  left: 14px;
-  color: var(--cyan);
-}
-
-.ci {
-  right: 14px;
-  color: var(--acid);
-}
-
 /* 9. Interests */
 .chips {
   display: flex;
@@ -370,10 +352,6 @@ canvas {
     border-color 180ms ease;
 }
 
-.chips span:hover {
-  transform: translateY(-2px);
-  border-color: var(--cyan);
-}
 
 /* 10. Research experience */
 .list {
@@ -462,7 +440,6 @@ canvas {
 }
 
 /* 13. Research profiles */
-.grid,
 .awards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -471,7 +448,6 @@ canvas {
   background: var(--line);
 }
 
-.grid article,
 .awards article {
   min-height: 220px;
   padding: 27px;
@@ -481,24 +457,11 @@ canvas {
     background 200ms ease;
 }
 
-.grid article:hover,
 .awards article:hover {
   transform: translateY(-4px);
   background: #0a1a16;
 }
 
-.grid b {
-  display: grid;
-  place-items: center;
-  width: 45px;
-  height: 45px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  color: var(--cyan);
-  font: 500 10px var(--mono);
-}
-
-.grid h3,
 .awards h3 {
   margin-top: 45px;
   color: #ffffff;
@@ -506,7 +469,6 @@ canvas {
   font-size: 24px;
 }
 
-.grid p,
 .awards p {
   color: var(--muted);
   font-size: 12px;
@@ -559,12 +521,6 @@ canvas {
   text-underline-offset: 7px;
 }
 
-.email-note {
-  max-width: 620px;
-  color: rgba(7, 16, 13, 0.7);
-  font-size: 11px;
-}
-
 /* 16. Footer */
 footer {
   padding: 25px 0;
@@ -599,7 +555,6 @@ footer {
     gap: 22px;
   }
 
-  .grid,
   .awards {
     grid-template-columns: 1fr 1fr;
   }
@@ -639,7 +594,6 @@ footer {
     gap: 8px;
   }
 
-  .grid,
   .awards {
     grid-template-columns: 1fr;
   }
@@ -760,7 +714,6 @@ footer {
 }
 .empty,
 .canvasbox,
-.grid article,
 .awards article {
   background-color: rgba(7, 18, 15, 0.88);
 }
@@ -856,10 +809,7 @@ main > section.dark::after,
 /* Clickable awards, thesis, and reference-style arrows */
 .award-link,
 .award-link:link,
-.award-link:visited,
-#thesis .thesis-entry h3 a,
-#thesis .thesis-entry h3 a:link,
-#thesis .thesis-entry h3 a:visited {
+.award-link:visited {
   color: inherit;
   text-decoration: none !important;
   border-bottom: 0 !important;
@@ -870,8 +820,7 @@ main > section.dark::after,
 .awards article:has(.award-link) {
   cursor: pointer;
 }
-.award-link h3::after,
-#thesis .thesis-entry h3 a::after {
+.award-link h3::after {
   content: "↗";
   display: inline-block;
   margin-left: 0.45em;
@@ -882,8 +831,7 @@ main > section.dark::after,
   line-height: 1;
   vertical-align: 0.45em;
 }
-.award-link:hover h3::after,
-#thesis .thesis-entry h3 a:hover::after {
+.award-link:hover h3::after {
   color: var(--cyan);
 }
 
@@ -932,15 +880,6 @@ main > section.dark::after,
     transform 180ms ease,
     background 180ms ease;
 }
-.teaching-card:hover {
-  z-index: 1;
-  transform: translateY(-4px);
-  background: linear-gradient(
-    145deg,
-    rgba(13, 34, 29, 0.98),
-    rgba(6, 18, 15, 0.98)
-  );
-}
 .teaching-term {
   color: var(--cyan);
   font: 400 10px var(--mono);
@@ -972,20 +911,6 @@ main > section.dark::after,
   }
 }
 
-/* Causal diagram: more vertical breathing room */
-.canvasbox {
-  height: 500px;
-}
-@media (max-width: 850px) {
-  .canvasbox {
-    height: 430px;
-  }
-}
-@media (max-width: 520px) {
-  .canvasbox {
-    height: 360px;
-  }
-}
 
 /* Thesis collection */
 .thesis-grid {
@@ -993,21 +918,12 @@ main > section.dark::after,
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
-.thesis-card-link,
-.thesis-card-link:link,
-.thesis-card-link:visited,
-.thesis-card-link:hover,
-.thesis-card-link:active {
-  display: block;
-  color: inherit;
-  text-decoration: none !important;
-}
+
 .thesis-card {
   position: relative;
   min-height: 320px;
   padding: 32px;
   overflow: hidden;
-  cursor: pointer;
   border: 1px solid var(--line);
   background: linear-gradient(
     145deg,
@@ -1040,15 +956,7 @@ main > section.dark::after,
   height: 2px;
   background: linear-gradient(90deg, var(--cyan), transparent);
 }
-.thesis-card-link:hover .thesis-card {
-  transform: translateY(-4px);
-  border-color: rgba(105, 234, 214, 0.5);
-  background: linear-gradient(
-    145deg,
-    rgba(12, 34, 28, 0.97),
-    rgba(4, 14, 11, 0.99)
-  );
-}
+
 .thesis-card-meta {
   display: flex;
   align-items: center;
@@ -1057,8 +965,7 @@ main > section.dark::after,
   margin-bottom: 44px;
 }
 .thesis-year,
-.thesis-kind,
-.thesis-open {
+.thesis-kind {
   font: 400 9px var(--mono);
   letter-spacing: 0.1em;
 }
@@ -1088,11 +995,7 @@ main > section.dark::after,
   color: var(--muted);
   font-size: 12px;
 }
-.thesis-open {
-  display: inline-block;
-  margin-top: 36px;
-  color: var(--acid);
-}
+
 @media (max-width: 850px) {
   .thesis-grid {
     grid-template-columns: 1fr;
@@ -1244,4 +1147,93 @@ main > section.dark::after,
   .thesis-resources {
     grid-template-columns: 1fr;
   }
+}
+
+/* 24. Mobile menu */
+#menu {
+  display: none;
+  width: 38px;
+  height: 38px;
+  margin-left: 10px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+#menu span {
+  display: block;
+  width: 14px;
+  height: 1px;
+  margin: 4px auto;
+  background: #ffffff;
+}
+@media (max-width: 850px) {
+  #menu {
+    display: block;
+  }
+  #lang {
+    margin-left: auto;
+  }
+  #nav {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100vh - 68px);
+    padding: 6px 21px 16px;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--line);
+    background: #040908;
+  }
+  #nav.open {
+    display: flex;
+  }
+  #nav.open a:any-link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+  #nav.open a::after {
+    display: none;
+  }
+}
+
+/* 25. Legibility: minimum sizes for small text */
+.list p,
+.awards p,
+.thesis-summary {
+  font-size: 14px;
+}
+.talk-list small,
+.thesis-school,
+.thesis-kind,
+.teaching-card small {
+  font-size: 10px;
+}
+.talk-language,
+.thesis-language-badge {
+  font-size: 9px;
+}
+
+/* 26. Keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 3px;
+}
+
+/* 27. Language switch is now a link to the other language's page */
+#lang,
+#lang:link,
+#lang:visited {
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-decoration: none;
 }

@@ -1,26 +1,34 @@
 "use strict";
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-let language = localStorage.getItem("language") || "en";
-function setLanguage(next) {
-  language = next;
-  document.documentElement.lang = next;
-  window.dispatchEvent(new CustomEvent("site-language-change"));
-  $$(`[data-${next}]`).forEach((el) => {
-    const t = el.dataset[next];
-    if (t) t.includes("<br>") ? (el.innerHTML = t) : (el.textContent = t);
-  });
-  $$(`[data-href-${next}]`).forEach((el) => {
-    el.href = el.dataset[next === "fr" ? "hrefFr" : "hrefEn"];
-  });
-  const b = $("#lang");
-  if (b) b.textContent = next === "en" ? "FR" : "EN";
-  localStorage.setItem("language", next);
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// The language is fixed by the page (/ is English, /fr/ is French).
+// When switching, stay on the section being read.
+$("#lang")?.addEventListener("click", (e) => {
+  const link = e.currentTarget;
+  // Opened straight from disk (file://), a folder link shows a file listing
+  // instead of the page, so point at index.html explicitly in that case.
+  const page = location.protocol === "file:" ? "index.html" : "";
+  link.href = link.getAttribute("href").split("#")[0] + page + location.hash;
+});
+
+// Mobile menu
+const menuButton = $("#menu");
+const navPanel = $("#nav");
+function setMenu(open) {
+  navPanel?.classList.toggle("open", open);
+  menuButton?.setAttribute("aria-expanded", String(open));
 }
-$("#lang")?.addEventListener("click", () =>
-  setLanguage(language === "en" ? "fr" : "en"),
+menuButton?.addEventListener("click", () =>
+  setMenu(!navPanel.classList.contains("open")),
 );
-setLanguage(language);
+navPanel?.addEventListener("click", (e) => {
+  if (e.target.closest("a")) setMenu(false);
+});
+addEventListener("keydown", (e) => {
+  if (e.key === "Escape") setMenu(false);
+});
 const observer = new IntersectionObserver(
   (es) => es.forEach((e) => e.isIntersecting && e.target.classList.add("on")),
   { threshold: 0.1 },
@@ -83,7 +91,11 @@ class ConeAnimation {
     this.slider = $("#slider");
     this.button = $("#play");
     this.value = 0;
-    this.playing = true;
+    this.playing = !reduceMotion;
+    this.visible = true;
+    new IntersectionObserver(([entry]) => {
+      this.visible = entry.isIntersecting;
+    }).observe(this.canvas);
     this.time = 0;
     this.lastFrame = performance.now();
     this.slider?.addEventListener("input", () => {
@@ -96,7 +108,6 @@ class ConeAnimation {
       this.updateButton();
     });
     addEventListener("resize", () => this.resize());
-    addEventListener("site-language-change", () => this.updateButton());
     this.resize();
     this.updateButton();
     requestAnimationFrame((now) => this.frame(now));
@@ -125,6 +136,11 @@ class ConeAnimation {
   frame(now) {
     const delta = Math.min((now - this.lastFrame) / 1000, 0.05);
     this.lastFrame = now;
+    // Skip all work while the diagram is off screen.
+    if (!this.visible) {
+      requestAnimationFrame((next) => this.frame(next));
+      return;
+    }
     if (this.playing) {
       this.time += delta;
       const travel = 5;
@@ -324,17 +340,24 @@ class LensedStarField {
       },
       { passive: true },
     );
-    addEventListener("resize", () => this.resize());
+    addEventListener("resize", () => {
+      this.resize();
+      if (reduceMotion) this.frame(performance.now());
+    });
     this.resize();
     requestAnimationFrame((t) => this.frame(t));
   }
   resize() {
     const d = Math.min(devicePixelRatio || 1, 2);
+    const widthChanged = this.w !== innerWidth;
     this.w = innerWidth;
     this.h = innerHeight;
     this.canvas.width = this.w * d;
     this.canvas.height = this.h * d;
     this.c.setTransform(d, 0, 0, d, 0, 0);
+    // Mobile browsers fire resize when the address bar shows or hides:
+    // keep the existing stars unless the width really changed.
+    if (!widthChanged && this.stars) return;
     const n = Math.max(210, Math.floor((this.w * this.h) / 4300));
     this.stars = Array.from({ length: n }, (_, i) => ({
       x: Math.random() * this.w,
@@ -343,13 +366,6 @@ class LensedStarField {
       a: 0.46 + Math.random() * 0.54,
       s: 1.4 + Math.random() * 5.2,
       ph: i * 0.67,
-    }));
-    this.rays = Array.from({ length: 30 }, (_, i) => ({
-      a: (Math.PI * 2 * i) / 30 + Math.random() * 0.08,
-      l: 230 + Math.random() * 390,
-      w: 0.45 + Math.random() * 1.05,
-      o: 0.065 + Math.random() * 0.105,
-      ph: Math.random() * Math.PI * 2,
     }));
   }
   frame(t) {
@@ -360,7 +376,8 @@ class LensedStarField {
     this.background();
     this.drawStars(t, dt);
     this.ring(t);
-    requestAnimationFrame((n) => this.frame(n));
+    // With reduced motion, draw a single static frame.
+    if (!reduceMotion) requestAnimationFrame((n) => this.frame(n));
   }
   background() {
     const c = this.c;
@@ -401,32 +418,6 @@ class LensedStarField {
       c.fillStyle = `rgba(242,255,252,${s.a * tw})`;
       c.fill();
     });
-  }
-  drawRays(t) {
-    const c = this.c;
-    c.save();
-    c.globalCompositeOperation = "screen";
-    c.shadowColor = "rgba(166,242,229,.25)";
-    c.shadowBlur = 4;
-    this.rays.forEach((r) => {
-      const pulse = 0.78 + Math.sin(t * 0.0009 + r.ph) * 0.22,
-        x = this.p.x + Math.cos(r.a) * r.l,
-        y = this.p.y + Math.sin(r.a) * r.l,
-        cx = this.p.x + Math.cos(r.a + Math.PI / 2) * 34,
-        cy = this.p.y + Math.sin(r.a + Math.PI / 2) * 34,
-        g = c.createLinearGradient(x, y, this.p.x, this.p.y);
-      g.addColorStop(0, "rgba(175,245,233,0)");
-      g.addColorStop(0.42, `rgba(175,245,233,${r.o * 0.55 * pulse})`);
-      g.addColorStop(0.8, `rgba(202,255,246,${r.o * 1.25 * pulse})`);
-      g.addColorStop(1, `rgba(255,255,255,${r.o * 2.8 * pulse})`);
-      c.beginPath();
-      c.moveTo(x, y);
-      c.quadraticCurveTo(cx, cy, this.p.x, this.p.y);
-      c.strokeStyle = g;
-      c.lineWidth = r.w;
-      c.stroke();
-    });
-    c.restore();
   }
   ring(t) {
     const c = this.c,

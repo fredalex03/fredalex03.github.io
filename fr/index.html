@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#040908" name="theme-color" />
+    <meta
+      content="Frédéric-Alexandre Lacasse — physique mathématique, géométrie différentielle, topologie et gravitation."
+      name="description"
+    />
+    <title>Frédéric-Alexandre Lacasse | Site académique</title>
+    <meta content="website" property="og:type" />
+    <meta content="Frédéric-Alexandre Lacasse" property="og:title" />
+    <meta
+      content="Physique mathématique, géométrie différentielle, topologie et gravitation."
+      property="og:description"
+    />
+    <meta content="https://fredalex03.github.io/fr/" property="og:url" />
+    <meta content="fr_CA" property="og:locale" />
+    <link href="https://fredalex03.github.io/fr/" rel="canonical" />
+    <link href="https://fredalex03.github.io/" hreflang="en" rel="alternate" />
+    <link href="https://fredalex03.github.io/fr/" hreflang="fr" rel="alternate" />
+    <link
+      href="https://fredalex03.github.io/"
+      hreflang="x-default"
+      rel="alternate"
+    />
+    <meta
+      content="https://fredalex03.github.io/assets/portrait-800.jpg"
+      property="og:image"
+    />
+    <link
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23d5ff62'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2307100d'%3EFA%3C/text%3E%3C/svg%3E"
+      rel="icon"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/main.css" rel="stylesheet" />
+    <script defer="" src="../assets/main.js"></script>
+  </head>
+  <body>
+    <canvas aria-hidden="true" id="starfield"> </canvas>
+    <div id="progress"></div>
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="#home">
+          <b> F·A </b>
+          LACASSE
+        </a>
+        <div id="nav">
+          <a href="#about">À propos</a>
+          <a href="#articles"> Articles </a>
+          <a href="#education">Parcours</a>
+          <a href="#work">Stages</a>
+          <a href="#thesis">Mémoire</a>
+          <a href="#talks">Conférences</a>
+          <a href="#awards">Bourses</a>
+          <a href="#teaching">Enseignement</a>
+        </div>
+        <a aria-label="English version" href="../" hreflang="en" id="lang" lang="en">EN</a>
+        <button
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Menu"
+          id="menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <img
+          alt="Trou noir abstrait et espace-temps courbe"
+          src="../assets/black-hole.webp"
+        />
+        <div class="shade"></div>
+        <div class="wrap heroText reveal">
+          <p class="micro">PHYSIQUE MATHÉMATIQUE · GÉOMÉTRIE · TOPOLOGIE</p>
+          <h1>
+            Frédéric-Alexandre
+            <br />
+            <i> Lacasse </i>
+          </h1>
+          <p>J’étudie les structures géométriques des théories classiques des champs et de la gravitation, avec des intérêts en géométrie différentielle et en topologie.</p>
+          <div aria-label="Profils universitaires" class="academic-links">
+            <a
+              aria-label="Profil ORCID"
+              href="https://orcid.org/0009-0009-7678-188X"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="academic-icon orcid-icon"> iD </span>
+            </a>
+          </div>
+          <figure aria-label="Portrait" class="hero-portrait">
+            <img
+              alt="Portrait"
+              decoding="async"
+              loading="eager"
+              height="777"
+              src="../assets/portrait-800.jpg"
+              width="800"
+            />
+          </figure>
+        </div>
+      </section>
+      <section class="wrap section two" id="about">
+        <p class="micro">01 / À PROPOS</p>
+        <div class="reveal">
+          <h2>La géométrie comme langage de la physique fondamentale.</h2>
+          <p class="lead">Je suis étudiant en mathématiques à l’Université de Montréal et je travaille à l’interface de la géométrie et de la physique.</p>
+          <div class="chips">
+            <span>Géométrie différentielle</span>
+            <span>Topologie</span>
+            <span>Relativité mathématique</span>
+            <span>Théorie classique des champs</span>
+            <span>Espace des phases covariant</span>
+            <span>Géométrie carrollienne</span>
+          </div>
+        </div>
+      </section>
+      <section class="dark">
+        <div class="wrap two">
+          <div class="reveal">
+            <p class="micro">02 / GÉOMÉTRIE CAUSALE</p>
+            <h2>De l’espace galiléen au temps carrollien.</h2>
+            <p class="muted">Le cône causal rempli évolue continûment entre les limites de contraction de Carroll et de Galilée.</p>
+            <div class="control">
+              <span>CARROLL</span>
+              <input id="slider" max="100" min="0" type="range" value="0" />
+              <span>GALILÉE</span>
+            </div>
+            <button id="play">Mettre l’évolution en pause</button>
+          </div>
+          <div class="canvasbox reveal">
+            <canvas id="cone"> </canvas>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section" id="articles">
+        <div class="heading reveal">
+          <p class="micro">03 / ARTICLES</p>
+          <h2>Articles et prépublications</h2>
+        </div>
+        <div class="empty reveal">
+          <b> ∅ </b>
+          <div>
+            <h3>Aucun article public pour l’instant.</h3>
+            <p class="muted">Les articles et prépublications seront ajoutés ici dès qu’ils seront disponibles.</p>
+          </div>
+        </div>
+      </section>
+      <div aria-hidden="true" class="added-section-divider"></div>
+      <section class="wrap section" id="education">
+        <div class="heading reveal">
+          <p class="micro">04 / PARCOURS UNIVERSITAIRE</p>
+          <h2>Parcours universitaire</h2>
+        </div>
+        <div class="list reveal">
+          <article>
+            <time>JANV. 2027–</time>
+            <div>
+              <h3>Doctorat en mathématiques pures</h3>
+              <p>Université de Montréal · Directeur : Juan Margalef Bentabol · Codirecteur : Eduardo J. S. Villaseñor</p>
+              <p>Début en janvier 2027</p>
+            </div>
+          </article>
+          <article>
+            <time>JANV. 2024 – DÉC. 2026</time>
+            <div>
+              <h3>Baccalauréat en mathématiques pures et appliquées</h3>
+              <p>Université de Montréal · Moyenne cumulative : 4,3/4,3</p>
+              <p>En cours · Fin prévue : décembre 2026</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="dark section" id="work">
+        <div class="wrap">
+          <div class="heading reveal">
+            <p class="micro">05 / STAGES DE RECHERCHE</p>
+            <h2>Stages de recherche</h2>
+          </div>
+          <div class="list reveal">
+            <article>
+              <time> 2026 </time>
+              <div>
+                <h3>Espace des phases covariant de la gravitation transverse de Weyl avec frontières</h3>
+                <p>Université de Montréal · Juan Margalef Bentabol</p>
+              </div>
+            </article>
+            <article>
+              <time> 2025 </time>
+              <div>
+                <h3>Conjecture des isométries de Banach dans le plan pour la métrique de Hilbert</h3>
+                <p>Université de Montréal · Dmitry Faifman</p>
+              </div>
+            </article>
+            <article>
+              <time> 2024 </time>
+              <div>
+                <h3>Introduction à la topologie différentielle à travers le théorème de Poincaré–Hopf</h3>
+                <p>Université de Montréal · Octavian Cornea</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section" id="thesis">
+        <div class="heading reveal">
+          <p class="micro">06 / MÉMOIRE</p>
+          <h2>Mémoire</h2>
+        </div>
+        <div class="thesis-grid reveal">
+          <article class="thesis-card">
+            <div class="thesis-card-meta">
+              <span class="thesis-year"> 2026 </span>
+              <span class="thesis-kind">MÉMOIRE DE BACCALAURÉAT</span>
+              <span class="thesis-language-badge">TRAVAIL EN FRANÇAIS</span>
+            </div>
+            <small class="thesis-school">B.SC. EN MATHÉMATIQUES · UNIVERSITÉ DE MONTRÉAL</small>
+            <h3>Espace des phases covariant de la gravitation transverse de Weyl avec frontières</h3>
+            <p class="thesis-summary">Mémoire de fin d’études sous la direction de Juan Margalef Bentabol · Août 2026</p>
+            <div class="thesis-resources">
+              <a aria-label="Ouvrir le mémoire écrit (PDF)" class="thesis-resource thesis-written-link" href="../assets/memoire-bac.pdf" rel="noopener noreferrer" target="_blank">MÉMOIRE ÉCRIT ↗</a>
+              <a aria-label="Ouvrir les diapositives de soutenance (PDF)" class="thesis-resource thesis-oral-link" href="../assets/OralMAT4000.pdf" rel="noopener noreferrer" target="_blank">DIAPOSITIVES DE SOUTENANCE ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div aria-hidden="true" class="added-section-divider"></div>
+      <section class="wrap section talks-section" id="talks">
+        <div class="heading reveal">
+          <p class="micro">07 / CONFÉRENCES</p>
+          <h2>Conférences et vulgarisation</h2>
+        </div>
+        <div class="talk-list reveal">
+          <article>
+            <time>12 AOÛT 2026</time>
+            <div>
+              <small>CLUB MATHÉMATIQUE · UNIVERSITÉ DE MONTRÉAL</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>Fibrés, courbure et théorie classique des champs : un point de vue covariant</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/Clubmath_2026.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>15 JUIL. 2026</time>
+            <div>
+              <small>SEMAINE EXPÉRIUM · VULGARISATION</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>Géométrie non euclidienne, courbure, gravitation et cosmologie</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/experium2026.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>27 JUIN 2026</time>
+            <div>
+              <small>CONGRÈS CANADIEN DES ÉTUDIANTS EN MATHÉMATIQUES · UNIVERSITÉ McMASTER</small>
+              <span class="talk-language talk-language-en">ANGLAIS</span>
+              <h3>Calcul des variations : motivations vers la théorie classique des champs</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/Diapos_CUMC2026.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>10 JANV. 2026</time>
+            <div>
+              <small>SUMM 2026 · MONTRÉAL</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>Quand les mathématiques précèdent la physique : de Riemann aux trous noirs</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/summ2026.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>6 AOÛT 2025</time>
+            <div>
+              <small>CLUB MATHÉMATIQUE · UNIVERSITÉ DE MONTRÉAL</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>Géométrie projective et géométrie convexe</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/presentation-stage-e25.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>24 JUIN 2025</time>
+            <div>
+              <small>CONGRÈS CANADIEN DES ÉTUDIANTS EN MATHÉMATIQUES · UNIVERSITÉ DE WATERLOO</small>
+              <span class="talk-language talk-language-en">ANGLAIS</span>
+              <h3>Sauver les polynômes : une perspective de topologie différentielle</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/beamer-cumc.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>11 JANV. 2025</time>
+            <div>
+              <small>SUMM 2025 · MONTRÉAL</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>De la topologie aux polynômes</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/Présentation___SUMM.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+          <article>
+            <time>22 AOÛT 2024</time>
+            <div>
+              <small>CLUB MATHÉMATIQUE · UNIVERSITÉ DE MONTRÉAL</small>
+              <span class="talk-language talk-language-fr">FRANÇAIS</span>
+              <h3>Introduction à la topologie différentielle à travers le théorème du point fixe de Brouwer</h3>
+              <a aria-label="Ouvrir la présentation (PDF)" class="talk-pdf-link" href="../assets/Intro_top_diff_Frédéric-A.Lacasse.pdf" rel="noopener noreferrer" target="_blank">OUVRIR LE PDF ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <div aria-hidden="true" class="added-section-divider"></div>
+      <section class="wrap section" id="awards">
+        <div class="heading reveal">
+          <p class="micro">08 / BOURSES ET DISTINCTIONS</p>
+          <h2>Distinctions sélectionnées</h2>
+        </div>
+        <div class="awards reveal">
+          <article>
+            <a
+              class="award-link"
+              href="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-detudes-superieures-en-recherche-du-canada-au-niveau-de-la"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <time> 2027 </time>
+              <h3>Bourse d’études supérieures en recherche du Canada — Maîtrise</h3>
+              <p>
+                <span>CRSNG</span>
+                · 27&nbsp;000&nbsp;$
+              </p>
+            </a>
+          </article>
+          <article>
+            <a
+              class="award-link"
+              href="https://nserc-crsng.canada.ca/fr/possibilite-de-financement/bourses-de-recherche-de-1er-cycle"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <time> 2025 et 2026 </time>
+              <h3>Bourse de recherche de 1er cycle</h3>
+              <p>
+                <span>CRSNG</span>
+                · 7&nbsp;500&nbsp;$
+              </p>
+            </a>
+          </article>
+          <article>
+            <a
+              class="award-link"
+              href="https://dms.umontreal.ca/fr/ressources-et-services/soutien-financier"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <time> 2025 </time>
+              <h3>Prix Jean-Maranda</h3>
+              <p>Université de Montréal · 1&nbsp;000&nbsp;$</p>
+            </a>
+          </article>
+          <article>
+            <a
+              class="award-link"
+              href="https://fas.umontreal.ca/etudes/ceremonie-annuelle-de-remise-de-bourses/titulaires-de-bourses-2025/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <time> 2025 </time>
+              <h3>Bourse du doyen de la FAS</h3>
+              <p>Université de Montréal · 2&nbsp;000&nbsp;$</p>
+            </a>
+          </article>
+        </div>
+      </section>
+      <div aria-hidden="true" class="added-section-divider"></div>
+      <section class="wrap section" id="teaching">
+        <div class="heading reveal">
+          <p class="micro">09 / EXPÉRIENCE D’ENSEIGNEMENT</p>
+          <div>
+            <h2>Expérience d’enseignement</h2>
+            <p class="teaching-intro">Auxiliariats d’enseignement à l’Université de Montréal.</p>
+          </div>
+        </div>
+        <div class="teaching-grid reveal">
+          <article class="teaching-card">
+            <span class="teaching-term">AUTOMNE 2026</span>
+            <h3>Calcul 1</h3>
+            <p>MAT1400</p>
+            <h3>Calcul intégral</h3>
+            <p>MAT1923</p>
+            <small> Université de Montréal </small>
+          </article>
+          <article class="teaching-card">
+            <span class="teaching-term">AUTOMNE 2025</span>
+            <h3>Calcul différentiel</h3>
+            <p>MAT1903</p>
+            <h3>Analyse appliquée</h3>
+            <p>MAT2466</p>
+            <small> Université de Montréal </small>
+          </article>
+          <article class="teaching-card">
+            <span class="teaching-term">AUTOMNE 2024</span>
+            <h3>Calcul 1</h3>
+            <p>MAT1400</p>
+            <small> Université de Montréal </small>
+          </article>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <p class="micro">10 / CONTACT</p>
+          <h2>Parlons de géométrie,<br><i>de topologie et de gravitation.</i></h2>
+          <a
+            class="email"
+            href="mailto:frederic-alexandre.lacasse@umontreal.ca"
+          >
+            FREDERIC-ALEXANDRE.LACASSE@UMONTREAL.CA ↗
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        ©
+        <span id="year"> </span>
+        Frédéric-Alexandre Lacasse
+      </div>
+    </footer>
+  </body>
+</html>
